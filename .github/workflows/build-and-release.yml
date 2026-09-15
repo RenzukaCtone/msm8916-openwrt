@@ -76,16 +76,10 @@ jobs:
             make package/msm8916/cups/compile package/index V=s
           "
 
-      - name: Package Offline Kmod Bundle & Compute Checksums
+      - name: Package Offline Kmod Bundle
         run: |
           cd openwrt/bin/targets/msm89xx/msm8916
           tar -czvf kmods-msm8916-${{ steps.vars.outputs.version }}.tar.gz packages/
-          sha256sum openwrt-msm89xx-msm8916-generic-hmu05-* \
-                    openwrt-msm89xx-msm8916-generic-ufi001b-* \
-                    openwrt-msm89xx-msm8916-yiming-uz801v3-* \
-                    openwrt-msm89xx-msm8916-generic-uf02-* \
-                    kmods-msm8916-${{ steps.vars.outputs.version }}.tar.gz > sha256sums
-          cat sha256sums
 
       - name: Prepare GitHub Pages Feed Repository
         run: |
@@ -116,4 +110,3 @@ jobs:
             openwrt/bin/targets/msm89xx/msm8916/openwrt-msm89xx-msm8916-*-squashfs-sysupgrade.bin
             openwrt/bin/targets/msm89xx/msm8916/openwrt-msm89xx-msm8916-*-firmware.zip
             openwrt/bin/targets/msm89xx/msm8916/kmods-msm8916-${{ steps.vars.outputs.version }}.tar.gz
-            openwrt/bin/targets/msm89xx/msm8916/sha256sums
