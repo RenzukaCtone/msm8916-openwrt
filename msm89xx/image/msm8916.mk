@@ -79,4 +79,15 @@ define Device/generic-hmu05
 endef
 TARGET_DEVICES += generic-hmu05
 
+define Device/openstick-ufi103s
+  $(Device/openstick-ufi001c)
+  DEVICE_MODEL := OpenStick UFI103S
+  DEVICE_DTS_DIR := ../dts
+  SUPPORTED_DEVICES := thwc,ufi001c openstick-ufi103s
+  DEVICE_PACKAGES := wpad-basic-wolfssl rmtfs uci-usb-gadget \
+		block-mount f2fs-tools tar \
+		msm-firmware-dumper reboot-edl qcom-carrier-autocfg
+endef
+TARGET_DEVICES += openstick-ufi103s
+
 endif
