@@ -82,7 +82,7 @@ TARGET_DEVICES += generic-hmu05
 define Device/openstick-ufi103s
   $(Device/openstick-ufi001c)
   DEVICE_MODEL := OpenStick UFI103S
-  DEVICE_DTS_DIR := ../dts
+  DEVICE_DTS := ../dts/msm8916-thwc-ufi103s.dts
   SUPPORTED_DEVICES := thwc,ufi001c openstick-ufi103s
   DEVICE_PACKAGES := wpad-basic-wolfssl rmtfs uci-usb-gadget \
 		block-mount f2fs-tools tar \
