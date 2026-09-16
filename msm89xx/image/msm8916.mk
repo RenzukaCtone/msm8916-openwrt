@@ -82,8 +82,9 @@ TARGET_DEVICES += generic-hmu05
 define Device/openstick-ufi103s
   $(Device/openstick-ufi001c)
   DEVICE_MODEL := OpenStick UFI103S
-  DEVICE_DTS := ../dts/msm8916-thwc-ufi103s.dts
+  DEVICE_DTS := msm8916-thwc-ufi103s
   SUPPORTED_DEVICES := thwc,ufi001c openstick-ufi103s
+  FILESYSTEMS := squashfs
   DEVICE_PACKAGES := wpad-basic-wolfssl rmtfs uci-usb-gadget \
 		block-mount f2fs-tools tar \
 		msm-firmware-dumper reboot-edl qcom-carrier-autocfg
