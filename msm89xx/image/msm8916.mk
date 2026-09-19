@@ -80,7 +80,8 @@ endef
 TARGET_DEVICES += generic-hmu05
 
 define Device/openstick-ufi103s
-  $(Device/openstick-ufi001c)
+  $(Device/msm8916)
+  DEVICE_VENDOR := Generic
   DEVICE_MODEL := OpenStick UFI103S
   DEVICE_DTS := msm8916-thwc-ufi103s
   SUPPORTED_DEVICES := thwc,ufi001c openstick-ufi103s
